@@ -8,7 +8,7 @@
   }
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip; /* 'clip' unlike 'hidden' does NOT break position:sticky */
   }
   body {
     font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;

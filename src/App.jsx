@@ -46,14 +46,12 @@ function PharmacyApp() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-emerald-500 selection:text-white">
-      {/* Top Notice Bar */}
-      <TopNoticeBar onOpenAdmin={() => setIsAdminModalOpen(true)} />
-
-      {/* Main Header / Sticky Navbar */}
+      {/* Sticky Navbar (includes announcement ribbon + main nav) */}
       <Navbar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         onOpenRxModal={() => setIsRxModalOpen(true)}
+        onOpenAdmin={() => setIsAdminModalOpen(true)}
       />
 
       {/* Hero Section */}
