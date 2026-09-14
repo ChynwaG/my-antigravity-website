@@ -41,7 +41,7 @@ export default function CartDrawer() {
       ></div>
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white border-l border-slate-200 shadow-2xl flex flex-col">
+        <div className="w-full max-w-md bg-white border-l border-slate-200 shadow-2xl flex flex-col">
           
           {/* Header */}
           <div className="p-4 bg-blue-900 text-white flex items-center justify-between">

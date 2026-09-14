@@ -14,6 +14,8 @@ import StoreLocations from './components/StoreLocations';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
+import ProductModal from './components/ProductModal';
+
 function PharmacyApp() {
   const { inventory } = useInventory();
 
@@ -21,6 +23,7 @@ function PharmacyApp() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [isRxModalOpen, setIsRxModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   // Filter inventory based on active category & search query
   const filteredItems = useMemo(() => {
@@ -71,6 +74,7 @@ function PharmacyApp() {
           items={filteredItems}
           searchQuery={searchQuery}
           onResetFilters={handleResetFilters}
+          onSelectProduct={setSelectedProduct}
         />
       </main>
 
@@ -93,6 +97,14 @@ function PharmacyApp() {
         isOpen={isAdminModalOpen}
         onClose={() => setIsAdminModalOpen(false)}
       />
+      
+      {/* Product Detail Modal */}
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
   );
 }

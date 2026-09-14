@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 
-export default function ProductGrid({ items, searchQuery, onResetFilters }) {
+export default function ProductGrid({ items, searchQuery, onResetFilters, onSelectProduct }) {
   if (items.length === 0) {
     return (
       <div className="text-center py-16 bg-white border border-slate-200 rounded-2xl p-8 space-y-3 mt-6">
@@ -23,7 +23,7 @@ export default function ProductGrid({ items, searchQuery, onResetFilters }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-6">
       {items.map(item => (
-        <ProductCard key={item.id} item={item} />
+        <ProductCard key={item.id} item={item} onSelectProduct={onSelectProduct} />
       ))}
     </div>
   );
